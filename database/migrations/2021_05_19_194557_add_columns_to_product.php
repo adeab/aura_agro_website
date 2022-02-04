@@ -17,7 +17,6 @@ class AddColumnsToProduct extends Migration
             //
             $table->string("name");
             $table->string("slug");
-            $table->integer("category_id");
             $table->mediumText("description");
             $table->mediumText("coverPhoto");
             $table->integer("bookingStatus");
@@ -34,7 +33,6 @@ class AddColumnsToProduct extends Migration
         Schema::table('products', function (Blueprint $table) {
             $table->dropColumn('name');
             $table->dropColumn('slug');
-            $table->dropColumn('category_id');
             $table->dropColumn('description');
             $table->dropColumn('coverPhoto');
             $table->dropColumn('bookingStatus');

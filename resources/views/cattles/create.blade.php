@@ -19,11 +19,11 @@
     <form style="padding-top: 2rem; padding-bottom: 2rem;" method="post" action="{{url('cattle')}}" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
-            <label for="cattle_title">Enter Title</label>
+            <label for="cattle_title">Enter Cattle ID</label>
             <input class="form-control" type="text" placeholder="Enter Title" name="cattle_title" id="cattle_title"
                 required>
         </div>
-        <div class="form-group">
+        {{-- <div class="form-group">
             <a class="float-right" href="{{ route('cattle.create') }}"><i class="fas fa-plus"
                     style="margin-right: .5rem;"></i>Create New Category</a>
             <label for="category">Select Category:</label>
@@ -33,7 +33,7 @@
                 <option value="2">Category Two</option>
                 <option value="3">Category Three</option>
             </select>
-        </div>
+        </div> --}}
         <div class="form-group">
             <label for="cattle_detail">Write Desccription:</label>
             <textarea rows="6" placeholder="Enter Cattle Detail" name="cattle_detail" id="cattle_detail"></textarea>

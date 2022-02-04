@@ -54,7 +54,6 @@ class ProductController extends Controller
         $cattle= new Product();
         $cattle->name=$request->cattle_title;
         $cattle->slug= strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $request->cattle_title), '-'));
-        $cattle->category_id=$request->category;
         $cattle->description= $request->cattle_detail;
         $cattle->bookingStatus=0;
         $cattle->videoLink= $request->cattle_video;

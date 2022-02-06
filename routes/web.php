@@ -17,13 +17,19 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('dashboard', 'HomeController@index')->name('home');
+
 Route::get('cattles', 'PageController@cattles')->name('allcattles');
 Route::get('showcattle/{slug}', 'PageController@show')->name('cattle-detail');
 
 // Route::get('cattles/create', 'ProductController@create')->name('create');
 // Route::post('cattle', 'ProductController@store');
-Route::resource('cattle', 'ProductController');
+Route::group(['middleware' => ['auth']], function () {
+    Route::resource('cattle', 'ProductController');
+    Route::get('dashboard', 'HomeController@index')->name('home');
+    Route::get('cms/appearance', 'CmsController@appearance')->name('appearance');
+    Route::post('appearance', 'CmsController@updateAppearance');
+});
+
 
 
 Route::get('image-upload', 'PhotoController@index');

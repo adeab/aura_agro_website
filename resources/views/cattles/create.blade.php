@@ -56,7 +56,7 @@
                 id="cattle_video">
         </div>
         <div class="form-group">
-            @include('includes.cropprev')
+            @include('includes.cropprev', ['label'=>'Please Select Cover Photo', 'ratio'=>4/3, 'prev_height'=>240, 'prev_width'=>320])
         </div>
         <br>
         @include('includes.multipleprev')

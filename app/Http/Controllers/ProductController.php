@@ -14,15 +14,15 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function __construct()
-    {
-        $this->middleware('auth', ['except' => ['showCattles']]);
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('auth', ['except' => ['showCattles']]);
+    // }
 
-    public function showCattles()
-    {
+    // public function showCattles()
+    // {
         
-    }
+    // }
 
      public function index()
     {

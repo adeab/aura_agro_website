@@ -26,7 +26,7 @@
 </style>
 
 
-<label>Please Selete Cover Photo</label>
+<label>{{ $label }}</label>
 <input type="file" name="image" class="image form-control-file">
 <div id="preview_img2"></div>
 <input type="text" name="image_data" id="image_data" hidden>
@@ -52,6 +52,9 @@
                     </div>
                 </div>
             </div>
+            <input type="text" value={{ $ratio }} id="crop_ratio">
+            <input type="text" value={{ $prev_height }} id="prev_height">
+            <input type="text" value={{ $prev_width }} id="prev_width">
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                 <button type="button" class="btn btn-primary" id="crop">Crop</button>
@@ -91,7 +94,7 @@
         });
         $modal.on('shown.bs.modal', function () {
             cropper = new Cropper(image, {
-                aspectRatio: 4/3,
+                aspectRatio: eval( $('#crop_ratio').val()),
                 viewMode: 3,
                 preview: '.preview'
             });
@@ -102,8 +105,8 @@
         $("#crop").click(function () {
             $('#preview_img2').empty();
             canvas = cropper.getCroppedCanvas({
-                width: 320,
-                height: 240,
+                width: $('#prev_width').val(),
+                height: $('#prev_width').val(),
             });
             canvas.toBlob(function (blob) {
                 url = URL.createObjectURL(blob);

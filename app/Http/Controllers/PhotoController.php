@@ -12,9 +12,9 @@ class PhotoController extends Controller
     public function index(){
         return view('test.index');
     }
-    public function index_two(){
-        return view('test.crop-image-upload');
-    }
+    // public function index_two(){
+    //     return view('test.crop-image-upload');
+    // }
  
     public function uploadCropImage(Request $request)
     {

@@ -87,35 +87,7 @@
             <h2>Welcome to Aura Agro</h2>
             <div class="text">The FARM Animal Care Program standards are revised every three years to reflect the most current science and <br> best management practices within the dairy industry. </div>
         </div>
-        <div class="row">
-            <div class="col-lg-4 welcome-block-one">
-                <div class="inner-box">
-                    <div class="image"><img src= "{{asset('images/resource/image-1.jpg')}}" alt=""></div>
-                    <div class="content">
-                        <h4>Milking</h4>
-                        <div class="text">Lexcept to obtain some advantage from <br> it? But who has any right to find fault <br> with a man chooses to enjoy.</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 welcome-block-one">
-                <div class="inner-box">
-                    <div class="image"><img src= "{{asset('images/resource/image-2.jpg')}}" alt=""></div>
-                    <div class="content">
-                        <h4>Feeding</h4>
-                        <div class="text">Lexcept to obtain some advantage from <br> it? But who has any right to find fault <br> with a man chooses to enjoy.</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 welcome-block-one">
-                <div class="inner-box">
-                    <div class="image"><img src= "{{asset('images/resource/image-3.jpg')}}" alt=""></div>
-                    <div class="content">
-                        <h4>Our Products</h4>
-                        <div class="text">Lexcept to obtain some advantage from <br> it? But who has any right to find fault <br> with a man chooses to enjoy.</div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <div class="row"></div>
     </div>
 </section>
 

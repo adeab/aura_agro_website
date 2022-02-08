@@ -9,8 +9,9 @@
                     <!--Column-->
                     <div class="column col-lg-4">
                         <div class="widget about-widget">
-                            <div class="logo"><a href="index.html"><img src="{{ asset('images/logo-large.png')}}" alt=""></a></div>
-                           
+                            <div class="logo">
+                                @include('includes.logo', ['height'=>null])
+                            </div>
                         </div>     
                     </div>
                     

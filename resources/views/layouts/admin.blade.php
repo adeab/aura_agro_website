@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Aura Agro | Dashboard</title>
-
+  <link rel="shortcut icon" href="{{ asset('images/favicon.png')}}" type="image/x-icon">
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
@@ -32,7 +32,7 @@
 
   <!-- Preloader -->
   <div class="preloader flex-column justify-content-center align-items-center">
-    <img class="animation__shake" src="{{ asset('images/logo.png')}}" alt="AdminLTELogo">
+    <img class="animation__shake" src="{{ asset('images/logo.png')}}" alt="aura_agro_logo">
   </div>
 
   <!-- Navbar -->
@@ -170,7 +170,7 @@
             </a>
             <ul class="nav nav-treeview">              
               <li class="nav-item">
-                <a href="{{ url('/dashboard') }}" class="nav-link {{ (request()->is('cms/appearance')) ? 'active' : '' }}">
+                <a href="{{ url('/cms/appearance') }}" class="nav-link {{ (request()->is('cms/appearance')) ? 'active' : '' }}">
                   {{-- <i class="far fa-list nav-icon"></i> --}}
                   <i class="fas fa-palette nav-icon"></i>
                   <p>Appearance</p>
@@ -211,10 +211,14 @@
        
        
         </ul>
+        
       </nav>
       <!-- /.sidebar-menu -->
     </div>
     <!-- /.sidebar -->
+    <div class="sidebar-bottom" >
+      @include('includes.logo', ['height'=>null])
+    </div>
   </aside>
 
   <!-- Content Wrapper. Contains page content -->

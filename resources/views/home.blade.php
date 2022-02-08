@@ -29,9 +29,9 @@
       <div class="row mb-2">
           <div class="col-sm-6">
             <div class="row">
-            <div class="span d-flex align-items-center">
-              <a href="{{ url('/') }}"><img src="{{ asset('images/logo.png')}}" style="height: 7rem;" alt=""></a>
-            </div>
+            {{-- <div class="span d-flex align-items-center">
+              @include('includes.logo', ['height'=> '7rem'])
+            </div> --}}
             <div class="span d-flex align-items-center">
               <h1>Cattle List</h1>
             </div>

@@ -11,9 +11,7 @@
 @endsection
 @section('content')
 <div class="container" style="padding-top: 2rem;">
-    <div class="span float-right">
-        <a href="{{ url('/') }}"><img src="{{ asset('images/logo.png')}}" style="height: 8rem;" alt=""></a>
-    </div>
+   
     <h1>Add a New Cattle</h1>
     <p>Please fill up the form and submit to add a new cattle</p>
     <form style="padding-top: 2rem; padding-bottom: 2rem;" method="post" action="{{url('cattle')}}" enctype="multipart/form-data">

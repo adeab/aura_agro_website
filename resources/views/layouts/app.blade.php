@@ -128,12 +128,14 @@
                 <div class="inner-container">
                     <!--Logo-->
                     <div class="logo-box">
-                        <div class="logo"><a href="{{ url('/') }}"><img src="{{ asset('images/logo.png')}}" alt=""></a></div>
+                        <div class="logo">
+                            @include('includes.logo', ['height'=>null])
+                        </div>
                     </div>
                     <div class="contact-info">
                         <div class="single-info">
                             <div class="icon"><span class="flaticon-null-1"></span></div>
-                            <div class="text">Address Line 1 <br> Address Line 2</div>
+                            <div class="text">{{$appearance->address}} <br> Address Line 2</div>
                         </div>
                         <div class="single-info">
                             <div class="icon"><span class="flaticon-null-2"></span></div>

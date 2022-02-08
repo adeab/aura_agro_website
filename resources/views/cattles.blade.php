@@ -78,7 +78,7 @@
                         <div class="inner-box">
                             <div class="image">
                                 <a href="{{ route('cattle-detail', $cattle->slug) }}"><img src="{{asset('upload').'/'.$cattle->coverPhoto}}"
-                                        alt=""></a>
+                                        alt="aura-agro-logo"></a>
                             </div>
                             <div class="lower-content">
                                 <h4><a href="{{ route('cattle-detail', $cattle->slug) }}">{{ $cattle->name }}</a></h4>

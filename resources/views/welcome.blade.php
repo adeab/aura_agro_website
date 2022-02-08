@@ -84,8 +84,10 @@
 <section class="welcome-section pb-0">
     <div class="auto-container">
         <div class="sec-title text-center">
-            <h2>Welcome to Aura Agro</h2>
-            <div class="text">The FARM Animal Care Program standards are revised every three years to reflect the most current science and <br> best management practices within the dairy industry. </div>
+            <h2>{{ $appearance->welcome_header }}</h2>
+            <div class="text">
+                {{ $appearance->welcome_message }}
+            </div>
         </div>
         <div class="row"></div>
     </div>
@@ -98,36 +100,15 @@
             <div class="col-lg-7">
                 <div class="sec-title">
                     <h2>Our Story</h2>
-                    <div class="text">The FARM Animal Care Program standards are revised every three years to reflect the most current science and best management practices within the dairy industry. The current standards, rationale, and accountability measures have been reviewed and revised by the FARM Technical Writing Group and National Milk Producers Federation Animal Health and Well-Being Committee and approved by the National Milk Producers.</div>
+                    <div class="text">
+                        {{ $appearance->about_us }}
+                    </div>
                 </div>
                 <div class="row">
-                    {{-- <div class="col-md-3">
-                        <div class="icon-box">
-                            <div class="icon"><span class="flaticon-distillatory"></span></div>
-                            <h5>Modern <br> Dairy</h5>
-                        </div>
-                    </div> --}}
-                    {{-- <div class="col-md-3">
-                        <div class="icon-box">
-                            <div class="icon"><span class="flaticon-null-4"></span></div>
-                            <h5>Natural & <br> Organic</h5>
-                        </div>
-                    </div><div class="col-md-3">
-                        <div class="icon-box">
-                            <div class="icon"><span class="flaticon-wine"></span></div>
-                            <h5>Best <br> Products</h5>
-                        </div>
-                    </div> --}}
-                    {{-- <div class="col-md-3">
-                        <div class="icon-box">
-                            <div class="icon"><span class="flaticon-null-3"></span></div>
-                            <h5>Awarded <br> Farm</h5>
-                        </div>
-                    </div> --}}
+                    
                 </div>
             </div>
             <div class="col-lg-5">
-                {{-- <div class="image text-lg-right wow fadeInRight" data-wow-delay="500ms"><img src= "{{asset('images/resource/cow.png')}}" alt=""></div> --}}
                 <div class="embed-responsive embed-responsive-16by9">
                     <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/9E30O-WVu88" allowfullscreen></iframe>
                   </div>
@@ -337,8 +318,10 @@
 <section class="team-section">
     <div class="auto-container">
         <div class="sec-title text-center">
-            <h2>Meet Our Farmers</h2>
-            <div class="text">It’s at the farm, in the store and on your table. Dairy is feeding people today for whatever comes tomorrow. </div>
+            <h2>{{ $appearance->team_header }}</h2>
+            <div class="text">
+                {{ $appearance->team_message }}
+            </div>
         </div>
         <div class="row">
             <div class="col-lg-3 col-md-6 team-block-one">

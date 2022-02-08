@@ -135,11 +135,11 @@
                     <div class="contact-info">
                         <div class="single-info">
                             <div class="icon"><span class="flaticon-null-1"></span></div>
-                            <div class="text">{{$appearance->address}} <br> Address Line 2</div>
+                            <div class="text">{{$appearance->address}}</div>
                         </div>
                         <div class="single-info">
                             <div class="icon"><span class="flaticon-null-2"></span></div>
-                            <h5><a href="tel:(1800) 456 7890">(1800) 456 7890</a> <br>Call us</h5>
+                            <h5><a href="tel:{{ $appearance->phone_number }}">{{ $appearance->phone_number }}</a> <br>Call us</h5>
                         </div>
                     </div>
                     @auth

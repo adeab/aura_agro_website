@@ -135,7 +135,7 @@
                     <div class="contact-info">
                         <div class="single-info">
                             <div class="icon"><span class="flaticon-null-1"></span></div>
-                            <div class="text">{{$appearance->address}}</div>
+                            <div class="text">{!!$appearance->address!!}</div>
                         </div>
                         <div class="single-info">
                             <div class="icon"><span class="flaticon-null-2"></span></div>

@@ -86,7 +86,7 @@
         <div class="sec-title text-center">
             <h2>{{ $appearance->welcome_header }}</h2>
             <div class="text">
-                {{ $appearance->welcome_message }}
+                {!! $appearance->welcome_message !!}
             </div>
         </div>
         <div class="row"></div>
@@ -101,7 +101,7 @@
                 <div class="sec-title">
                     <h2>Our Story</h2>
                     <div class="text">
-                        {{ $appearance->about_us }}
+                        {!! $appearance->about_us !!}
                     </div>
                 </div>
                 <div class="row">
@@ -320,7 +320,7 @@
         <div class="sec-title text-center">
             <h2>{{ $appearance->team_header }}</h2>
             <div class="text">
-                {{ $appearance->team_message }}
+                {!! $appearance->team_message !!}
             </div>
         </div>
         <div class="row">

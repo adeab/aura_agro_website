@@ -25,7 +25,7 @@
                                     <input type="email" placeholder="Enter your email address">
                                     <button type="submit"><i class="fa fa-paper-plane"></i></button>
                                 </form> --}}
-                                <div class="text">{{ $appearance->address }}</div>
+                                <div class="text">{!!$appearance->address !!}</div>
                                 
                             </div>
                         </div>

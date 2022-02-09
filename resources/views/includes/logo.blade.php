@@ -1,2 +1,1 @@
-<a href="{{ url('/') }}"><img src="{{ asset('images/logo.png')}}" style="height: {{$height?$height:'100%'}}" alt="aura-agro-logo" >
-</a>
+<a href="{{ url('/') }}"><img src="{{ asset('images/logo.png')}}" style="height: {{$height?$height:'9rem'}}" alt="aura-agro-logo" ></a>

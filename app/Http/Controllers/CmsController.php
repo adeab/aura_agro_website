@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use App\Appearance;
+use App\Banner;
 
 class CmsController extends Controller
 {
@@ -13,6 +14,10 @@ class CmsController extends Controller
         $appearance = Appearance::take(1)->first();
         // dd($appearance);
         return view('cms.appearance', compact('appearance'));
+    }
+    public function banner(){
+        $banners = Banner::all();
+        return view('cms.banner', compact('banners'));
     }
     public function updateAppearance(Request $request){
         

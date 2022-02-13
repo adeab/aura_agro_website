@@ -80,7 +80,7 @@
 </section>
 <!-- End Bnner Section -->
 
-<!-- Welcome Section -->
+{{-- <!-- Welcome Section -->
 <section class="welcome-section pb-0">
     <div class="auto-container">
         <div class="sec-title text-center">
@@ -89,9 +89,38 @@
                 {!! $appearance->welcome_message !!}
             </div>
         </div>
-        <div class="row"></div>
+        <div class="row">
+            <div class="col-lg-4 welcome-block-one">
+                <div class="inner-box">
+                    <div class="image"><img src="assets/images/resource/image-1.jpg" alt=""></div>
+                    <div class="content">
+                        <h4>Milking</h4>
+                        <div class="text">Lexcept to obtain some advantage from <br> it? But who has any right to find fault <br> with a man chooses to enjoy.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 welcome-block-one">
+                <div class="inner-box">
+                    <div class="image"><img src="assets/images/resource/image-2.jpg" alt=""></div>
+                    <div class="content">
+                        <h4>Feeding</h4>
+                        <div class="text">Lexcept to obtain some advantage from <br> it? But who has any right to find fault <br> with a man chooses to enjoy.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 welcome-block-one">
+                <div class="inner-box">
+                    <div class="image"><img src="assets/images/resource/image-3.jpg" alt=""></div>
+                    <div class="content">
+                        <h4>Our Products</h4>
+                        <div class="text">Lexcept to obtain some advantage from <br> it? But who has any right to find fault <br> with a man chooses to enjoy.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-</section>
+</section> --}}
+
 
 <!-- About Section -->
 <section class="about-section" style="background-image: url(images/background/bg-1.jpg);">

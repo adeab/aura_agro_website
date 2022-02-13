@@ -26,8 +26,12 @@ Route::get('showcattle/{slug}', 'PageController@show')->name('cattle-detail');
 Route::group(['middleware' => ['auth']], function () {
     Route::resource('cattle', 'ProductController');
     Route::get('dashboard', 'HomeController@index')->name('home');
+
     Route::get('cms/appearance', 'CmsController@appearance')->name('appearance');
+    Route::get('cms/banner', 'CmsController@banner')->name('banner');
+    
     Route::post('appearance', 'CmsController@updateAppearance');
+    Route::post('banner', 'CmsController@updateBanner');
 });
 
 

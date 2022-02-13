@@ -61,7 +61,7 @@
             <label for="address">Write Address:</label>
             <textarea rows="6" placeholder="Address" name="address" id="address">{{$appearance?$appearance->address:''}}</textarea>
         </div>
-        <hr>
+        {{-- <hr>
         <div class="form-group">
             
                     <label for="welcome_title">Enter Welcome Section Title</label>
@@ -75,7 +75,7 @@
             <label for="welcome">Welcome Message:</label>
             <textarea rows="3" placeholder="Welcome Message" name="welcome" id="welcome">{{$appearance?$appearance->welcome_message:''}}</textarea>
         </div>
-        <hr>
+        <hr> --}}
         <div class="form-group">
             
                     <label for="team_title">Enter Team Section Title</label>

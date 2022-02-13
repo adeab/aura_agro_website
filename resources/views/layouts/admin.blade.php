@@ -177,7 +177,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ url('/cattle/create') }}" class="nav-link {{ (request()->is('cattle/create')) ? 'active' : '' }}">
+                <a href="{{ url('/cms/banner') }}" class="nav-link {{ (request()->is('cms/banner')) ? 'active' : '' }}">
                   <i class="far fa-images nav-icon"></i>
                   <p>Banner</p>
                 </a>
@@ -226,13 +226,13 @@
     @yield('content')
   </div>
   <!-- /.content-wrapper -->
-  <footer class="main-footer">
+  {{-- <footer class="main-footer">
     <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
     All rights reserved.
     <div class="float-right d-none d-sm-inline-block">
       <b>Version</b> 3.1.0
     </div>
-  </footer>
+  </footer> --}}
 
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">

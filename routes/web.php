@@ -32,6 +32,7 @@ Route::group(['middleware' => ['auth']], function () {
     
     Route::post('appearance', 'CmsController@updateAppearance');
     Route::post('banner', 'CmsController@updateBanner');
+    Route::get('toggleStatus/{slug}', 'ProductController@toggleStatus');
 });
 
 

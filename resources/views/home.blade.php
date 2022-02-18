@@ -64,7 +64,7 @@
               <a class="btn btn-primary float-right" href="{{ route('cattle.create') }}"><i class="fas fa-plus" style="margin-right: .5rem;"></i>Add New Cattle</a>
             </div>
             <!-- /.card-header -->
-            <div class="card-body">
+            <div class="card-body table-container"> 
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
@@ -85,10 +85,16 @@
                     <td>{{ $cattle->name }}</td>
                     <td>{{ $cattle->price }}</td>
                     <td>
-                      <span class="badge {{$cattle->bookingStatus?'badge-danger':'badge-success'}}">{{$cattle->bookingStatus?'Booked':'Available'}}</span>
-                      
+                      <button type="button" class="btn {{$cattle->bookingStatus?'btn-danger':'btn-primary'}} btn-sm" onclick="changeBookingStatus({{$cattle->id}}, this)" data-toggle="tooltip" data-placement="bottom" title="Click to change status"> {{$cattle->bookingStatus?'Booked':'Available'}}</button>
                     </td>
-                    <td>Action Buttons</td>
+                    <td>
+                      <button type="button" class="btn btn-link" data-toggle="tooltip" data-placement="bottom" title="Edit Detail"><i class="fas fa-edit"></i></button>
+                      <a href="{{ route('cattle-detail', $cattle->slug) }}" target="_blank" type="button" class="btn btn-link" data-toggle="tooltip" data-placement="bottom" title="View As Guest"><i class="far fa-eye"></i></a>
+                      <meta name="csrf-token" content="{{ csrf_token() }}">
+                      <button type="button" class="btn btn-link" style="color: red" data-toggle="tooltip" data-placement="bottom" title="Delete" onclick="deleteCattle({{$cattle->id}}, this)"><i class="fas fa-trash-alt"></i></button>
+                     
+
+                    </td>
                   </tr>    
                 @endforeach
                
@@ -122,6 +128,40 @@
     <!-- /.container-fluid -->
   </section>
 
+  <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script>
+          function changeBookingStatus(cattleid, thisBtn) {              
+             $.ajax({
+                type:'get',
+                url:'/toggleStatus/'+cattleid,             
+                success:function() {
+                  $(thisBtn).text(function(i, text){
+                      return text === "Booked" ? "Available" : "Booked";
+                  })
+                  $(thisBtn).toggleClass('btn-primary');
+                  $(thisBtn).toggleClass('btn-danger');
+                }
+             });
+          }
 
+          function deleteCattle(cattleid, thisBtn){
+            var token = $("meta[name='csrf-token']").attr("content");
+            // var cattle_id = cattleid;
+            // console.log(cattle_id);
+            $.ajax({
+                type: 'POST',
+                dataType: 'json',
+                data: {
+                  // id: cattleid,
+                  _token: token,
+                  _method: 'DELETE'
+                },
+                url: "{!! route('cattle.destroy', 'id') !!}",
+                success: function (data) {
+                    //
+                } 
+            });
+          }
+       </script>
 @endsection
 

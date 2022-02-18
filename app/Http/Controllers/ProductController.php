@@ -133,8 +133,16 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Product $product)
+    public function destroy($id)
     {
         //
+        dd($id);
+
+    }
+    public function toggleStatus($id){
+        $cattle= Product::find($id);
+        $cattle->bookingStatus = !$cattle->bookingStatus;
+        // dd($cattle->bookingStatus);
+        $cattle->save();
     }
 }

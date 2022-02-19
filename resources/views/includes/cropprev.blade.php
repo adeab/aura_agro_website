@@ -52,15 +52,16 @@
                     </div>
                 </div>
             </div>
-            <input type="text" value={{ $ratio }} id="crop_ratio">
-            <input type="text" value={{ $prev_height }} id="prev_height">
-            <input type="text" value={{ $prev_width }} id="prev_width">
+            <input type="text" value={{ $ratio }} id="crop_ratio" hidden>
+            <input type="text" value={{ $prev_height }} id="prev_height" hidden>
+            <input type="text" value={{ $prev_width }} id="prev_width" hidden>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                 <button type="button" class="btn btn-primary" id="crop">Crop</button>
             </div>
         </div>
     </div>
+</div>
 
     {{-- <div class="container"> --}}
         
@@ -145,6 +146,4 @@
         })
 
     </script>
-    </body>
-
-    </html>
+    

@@ -11,10 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::get('/', 'PageController@welcome');
 Auth::routes();
 
 
@@ -28,11 +28,11 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('dashboard', 'HomeController@index')->name('home');
 
     Route::get('cms/appearance', 'CmsController@appearance')->name('appearance');
-    Route::get('cms/banner', 'CmsController@banner')->name('banner');
-    
+    Route::resource('cms/banner', 'BannerController');
+    Route::resource('cms/team', 'TeamController');
+
     Route::post('appearance', 'CmsController@updateAppearance');
     Route::post('banner', 'CmsController@updateBanner');
-    Route::get('toggleStatus/{slug}', 'ProductController@toggleStatus');
 });
 
 

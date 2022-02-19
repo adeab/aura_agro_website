@@ -183,7 +183,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ url('/cattle/create') }}" class="nav-link {{ (request()->is('cattle/create')) ? 'active' : '' }}">
+                <a href="{{ url('/cms/team') }}" class="nav-link {{ (request()->is('cms/team')) ? 'active' : '' }}">
                   <i class="fas fa-user-friends nav-icon"></i>
                   <p>Team</p>
                 </a>

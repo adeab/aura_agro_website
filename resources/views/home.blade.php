@@ -146,8 +146,11 @@
 
           function deleteCattle(cattleid, thisBtn){
             var token = $("meta[name='csrf-token']").attr("content");
+            let url = "{{ route('cattle.destroy', ['id' => ":cattleid"]) }}";
+            url = url.replace(":cattleid", cattleid);
             // var cattle_id = cattleid;
             // console.log(cattle_id);
+            
             $.ajax({
                 type: 'POST',
                 dataType: 'json',
@@ -156,7 +159,7 @@
                   _token: token,
                   _method: 'DELETE'
                 },
-                url: "{!! route('cattle.destroy', 'id') !!}",
+                url: url,
                 success: function (data) {
                     //
                 } 

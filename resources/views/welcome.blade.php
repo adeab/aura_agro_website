@@ -28,22 +28,25 @@
     <div class="swiper-container banner-slider">
         <div class="swiper-wrapper">
             <!-- Slide Item -->
-            <div class="swiper-slide" style="background-image: url(images/main-slider/image-1.jpg);">
+            @foreach ($banners as $banner)
+            <div class="swiper-slide" style="background-image: url(upload/{{ $banner->image }});">
                 <div class="content-outer">
                     <div class="content-box">
                         <div class="inner">
-                            <h1>Milk and Fresh Products</h1>
-                            <div class="text">Dairy producers worldwide face similar challenges around animal welfare, <br>farm profitability, food safety and work efficiency.  </div>
+                            <h1>{{ $banner->title }}</h1>
+                            <div class="text">{{ $banner->subtitle }}</div>
                             <div class="link-box">
-                                <a href="#" class="theme-btn btn-style-one"><span>View all products</span></a>
+                                <a href="{{ url('/cattles') }}" class="theme-btn btn-style-one"><span>View all cattles</span></a>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>    
+            @endforeach
+            
 
             <!-- Slide Item -->
-            <div class="swiper-slide" style="background-image: url(images/main-slider/image-2.jpg);">
+            {{-- <div class="swiper-slide" style="background-image: url(images/main-slider/image-2.jpg);">
                 <div class="content-outer">
                     <div class="content-box">
                         <div class="inner">
@@ -55,10 +58,10 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
 
             <!-- Slide Item -->
-            <div class="swiper-slide" style="background-image: url(images/main-slider/image-3.jpg);">
+            {{-- <div class="swiper-slide" style="background-image: url(images/main-slider/image-3.jpg);">
                 <div class="content-outer">
                     <div class="content-box">
                         <div class="inner">
@@ -70,7 +73,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
     <div class="banner-slider-nav">
@@ -352,79 +355,31 @@
                 {!! $appearance->team_message !!}
             </div>
         </div>
-        <div class="row">
+        <div class="row justify-content-center" >
+            @foreach ($members as $member)
             <div class="col-lg-3 col-md-6 team-block-one">
                 <div class="inner-box wow fadeInUp" data-wow-duration="1500ms">
                     <div class="image">
-                        <img src= "{{asset('images/resource/team-1.jpg')}}" alt="">
-                        <div class="overlay-box">
+                        <img src="{{asset('images/team').'/'.$member->image}}" alt=""> 
+                        {{-- <div class="overlay-box">
                             <ul class="social-links">
                                 <li><a href="#"><span class="fab fa-facebook-f"></span></a></li>
                                 <li><a href="#"><span class="fab fa-twitter"></span></a></li>
                                 <li><a href="#"><span class="fab fa-google-plus-g"></span></a></li>
                             </ul>
-                        </div>                                
+                        </div>                                 --}}
                     </div>
                     <div class="content">
-                        <h4>John michale</h4>
-                        <div class="designation">Field Farmer</div>
+                        <h4>{{ $member->name }}</h4>
+                        <div class="designation">{{ $member->designation }}</div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-3 col-md-6 team-block-one">
-                <div class="inner-box wow fadeInDown" data-wow-duration="1500ms">
-                    <div class="image">
-                        <img src= "{{asset('images/resource/team-2.jpg')}}" alt="">
-                        <div class="overlay-box">
-                            <ul class="social-links">
-                                <li><a href="#"><span class="fab fa-facebook-f"></span></a></li>
-                                <li><a href="#"><span class="fab fa-twitter"></span></a></li>
-                                <li><a href="#"><span class="fab fa-google-plus-g"></span></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <h4>Mark John</h4>
-                        <div class="designation">Field Farmer</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 team-block-one">
-                <div class="inner-box wow fadeInUp" data-wow-duration="1500ms">
-                    <div class="image">
-                        <img src= "{{asset('images/resource/team-3.jpg')}}" alt="">
-                        <div class="overlay-box">
-                            <ul class="social-links">
-                                <li><a href="#"><span class="fab fa-facebook-f"></span></a></li>
-                                <li><a href="#"><span class="fab fa-twitter"></span></a></li>
-                                <li><a href="#"><span class="fab fa-google-plus-g"></span></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <h4>Merry Desulva</h4>
-                        <div class="designation">Field Farmer</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 team-block-one">
-                <div class="inner-box wow fadeInDown" data-wow-duration="1500ms">
-                    <div class="image">
-                        <img src= "{{asset('images/resource/team-4.jpg')}}" alt="">
-                        <div class="overlay-box">
-                            <ul class="social-links">
-                                <li><a href="#"><span class="fab fa-facebook-f"></span></a></li>
-                                <li><a href="#"><span class="fab fa-twitter"></span></a></li>
-                                <li><a href="#"><span class="fab fa-google-plus-g"></span></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <h4>John michale</h4>
-                        <div class="designation">Field Farmer</div>
-                    </div>
-                </div>
-            </div>
+            </div>    
+            @endforeach
+            
+            
+           
+            
         </div>
     </div>
 </section>

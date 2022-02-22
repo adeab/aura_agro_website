@@ -30,6 +30,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('cms/appearance', 'CmsController@appearance')->name('appearance');
     Route::resource('cms/banner', 'BannerController');
     Route::resource('cms/team', 'TeamController');
+    Route::resource('cms/testimonial', 'TestimonialController');
 
     Route::post('appearance', 'CmsController@updateAppearance');
     Route::post('banner', 'CmsController@updateBanner');

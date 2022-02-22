@@ -388,45 +388,23 @@
 <section class="testimonial-section" style="background-image: url(images/background/bg-4.jpg);">
     <div class="auto-container">
         <div class="theme_carousel owl-theme owl-carousel" data-options='{"loop": true, "margin": 40, "autoheight":true, "lazyload":true, "nav": true, "dots": true, "autoplay": true, "autoplayTimeout": 6000, "smartSpeed": 1000, "responsive":{ "0" :{ "items": "1" }, "600" :{ "items" : "1" }, "768" :{ "items" : "1" } , "992":{ "items" : "1" }, "1200":{ "items" : "1" }}}'>
+            @foreach ($testimonials as $testimonial)
             <div class="testimonial-block">
                 <div class="inner-box">
-                    <div class="image"><img src= "{{asset('images/resource/author-thumb-1.jpg')}}" alt=""></div>
+                    <div class="image"><img src="{{asset('images/testimonial').'/'.$testimonial->image}}" alt=""></div>
                     <div class="content">
                         <h2>What our client says</h2>
-                        <div class="text">Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative proaches to corporate strategy foster collabo rative thinking to further the overall value .</div>
+                        <div class="text">{{ $testimonial->quote }}</div>
                         <div class="author-info">
-                            <h4>Michale William</h4>
-                            <div class="designation">Ceo of Mart</div>
+                            <h4>{{ $testimonial->name }}</h4>
+                            <div class="designation">{{ $testimonial->designation }}</div>
                         </div>                                
                     </div>                            
                 </div>
             </div>
-            <div class="testimonial-block">
-                <div class="inner-box">
-                    <div class="image"><img src= "{{asset('images/resource/author-thumb-1.jpg')}}" alt=""></div>
-                    <div class="content">
-                        <h2>What our client says</h2>
-                        <div class="text">Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative proaches to corporate strategy foster collabo rative thinking to further the overall value .</div>
-                        <div class="author-info">
-                            <h4>Michale William</h4>
-                            <div class="designation">Ceo of Mart</div>
-                        </div>                                
-                    </div>                            
-                </div>
-            </div>
-            <div class="testimonial-block">
-                <div class="inner-box">
-                    <div class="image"><img src= "{{asset('images/resource/author-thumb-1.jpg')}}" alt=""></div>
-                    <div class="content">
-                        <h2>What our client says</h2>
-                        <div class="text">Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative proaches to corporate strategy foster collabo rative thinking to further the overall value .</div>
-                        <div class="author-info">
-                            <h4>Michale William</h4>
-                            <div class="designation">Ceo of Mart</div>
-                        </div>                                
-                    </div>                            
-                </div>
-            </div>
+            @endforeach
+            
+            
         </div>
     </div>
 </section>

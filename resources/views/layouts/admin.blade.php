@@ -189,7 +189,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ url('/cattle/create') }}" class="nav-link {{ (request()->is('cattle/create')) ? 'active' : '' }}">
+                <a href="{{ url('/cms/testimonial') }}" class="nav-link {{ (request()->is('cms/testimonial')) ? 'active' : '' }}">
                   <i class="fas fa-quote-right nav-icon"></i>
                   <p>Testimonial</p>
                 </a>

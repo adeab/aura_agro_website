@@ -6,6 +6,7 @@ use App\Product;
 use App\Photo;
 use App\Banner;
 use App\Team;
+use App\Testimonial;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -14,7 +15,8 @@ class PageController extends Controller
     public function welcome(){
         $banners = Banner::all();
         $members = Team::all();
-        return view('welcome', compact('banners', 'members'));
+        $testimonials = Testimonial::all();
+        return view('welcome', compact('banners', 'members', 'testimonials'));
     }
     public function cattles(){
         $total=Product::count();

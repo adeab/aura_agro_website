@@ -4,7 +4,7 @@
     <div class="auto-container">
         <h2>Services</h2>
         <ul class="page-breadcrumb">
-            <li><a href="index.html">home</a></li>
+            <li><a href="{{url('/')}}">Home</a></li>
             <li>Services</li>
         </ul>
     </div>

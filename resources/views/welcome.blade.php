@@ -28,6 +28,7 @@
     <div class="swiper-container banner-slider">
         <div class="swiper-wrapper">
             <!-- Slide Item -->
+            @if ($banners==null )
             @foreach ($banners as $banner)
             <div class="swiper-slide" style="background-image: url(upload/{{ $banner->image }});">
                 <div class="content-outer">
@@ -42,7 +43,23 @@
                     </div>
                 </div>
             </div>    
-            @endforeach
+            @endforeach   
+            @else
+            <div class="swiper-slide" style="background-image: url(images/main-slider/image-2.jpg);">
+                <div class="content-outer">
+                    <div class="content-box">
+                        <div class="inner">
+                            <h1>Demo Title</h1>
+                            <div class="text">Enter sliders from admin dashboard</div>
+                            <div class="link-box">
+                                <a href="{{ url('/cattles') }}" class="theme-btn btn-style-one"><span>View all products</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>   
+            @endif
+           
             
 
             <!-- Slide Item -->

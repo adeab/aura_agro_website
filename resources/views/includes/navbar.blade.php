@@ -25,7 +25,7 @@
                                     {{-- <a href="{{ url('/home') }}">Home</a>
                                     @else
                                     <a href="{{ route('login') }}">Login</a> --}}
-                                    <li><a href="#">Qurbani Services</a></li>
+                                    <li><a href="{{ route('allservices') }}">Qurbani Services</a></li>
                                     <li><a href="#">Contact Us</a></li>
                                 </ul>
                             </div>

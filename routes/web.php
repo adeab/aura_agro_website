@@ -19,6 +19,7 @@ Auth::routes();
 
 
 Route::get('cattles', 'PageController@cattles')->name('allcattles');
+Route::get('services', 'PageController@services')->name('allservices');
 Route::get('showcattle/{slug}', 'PageController@show')->name('cattle-detail');
 
 // Route::get('cattles/create', 'ProductController@create')->name('create');

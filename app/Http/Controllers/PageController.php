@@ -29,4 +29,7 @@ class PageController extends Controller
         // dd($cattle);
         return view('cattle', compact('cattle'));
     }
+    public function services(){
+        return view('services');
+    }
 }

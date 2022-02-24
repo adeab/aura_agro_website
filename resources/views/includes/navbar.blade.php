@@ -31,7 +31,7 @@
                             </div>
                         </nav>
                         <!-- Main Menu End-->
-
+                        <button type="button" class="theme-btn search-toggler"><span class="stroke-gap-icon icon-Search"></span></button>
                     </div>
                 </div>
             </div>
@@ -48,7 +48,7 @@
                             <!--Keep This Empty / Menu will come through Javascript-->
                         </nav><!-- Main Menu End-->
                         <!-- Main Menu End-->
-                        {{-- <button type="button" class="theme-btn search-toggler"><span class="stroke-gap-icon icon-Search"></span></button> --}}
+                        <button type="button" class="theme-btn search-toggler"><span class="stroke-gap-icon icon-Search"></span></button>
                     </div>
                 </div>
             </div>
@@ -60,13 +60,13 @@
             <div class="close-btn"><span class="icon flaticon-remove"></span></div>
 
             <nav class="menu-box">
-                <div class="nav-logo"><a href="index.html"><img src="{{ asset('images/logo-three.png')}}" alt=""
-                            title=""></a></div>
+                <div class="nav-logo"><a href="{{url('/')}}"><img src="{{ asset('images/logo.png')}}" alt=""
+                            title="" style="height: 7rem;"></a></div>
                 <div class="menu-outer">
                     <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
                 </div>
                 <!--Social Links-->
-                <div class="social-links">
+                {{-- <div class="social-links">
                     <ul class="clearfix">
                         <li><a href="#"><span class="fab fa-twitter"></span></a></li>
                         <li><a href="#"><span class="fab fa-facebook-square"></span></a></li>
@@ -74,7 +74,7 @@
                         <li><a href="#"><span class="fab fa-instagram"></span></a></li>
                         <li><a href="#"><span class="fab fa-youtube"></span></a></li>
                     </ul>
-                </div>
+                </div> --}}
             </nav>
         </div><!-- End Mobile Menu -->
 

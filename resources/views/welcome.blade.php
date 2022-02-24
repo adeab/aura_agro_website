@@ -100,7 +100,7 @@
 </section>
 <!-- End Bnner Section -->
 
-{{-- <!-- Welcome Section -->
+<!-- Welcome Section -->
 <section class="welcome-section pb-0">
     <div class="auto-container">
         <div class="sec-title text-center">
@@ -110,36 +110,25 @@
             </div>
         </div>
         <div class="row">
+            @foreach ($services as $service)
             <div class="col-lg-4 welcome-block-one">
+               
+                <a href="{{ route('service-detail', $service->slug) }}">
                 <div class="inner-box">
-                    <div class="image"><img src="assets/images/resource/image-1.jpg" alt=""></div>
+                    <div class="image"><img style="height: 15rem;" src="{{asset('upload').'/'.$service->image}}" alt=""></div>
                     <div class="content">
-                        <h4>Milking</h4>
-                        <div class="text">Lexcept to obtain some advantage from <br> it? But who has any right to find fault <br> with a man chooses to enjoy.</div>
+                        <h4>{{$service->title}}</h4>
+                        <div class="text">Click to see detail!</div>
                     </div>
                 </div>
+                </a>
+               
             </div>
-            <div class="col-lg-4 welcome-block-one">
-                <div class="inner-box">
-                    <div class="image"><img src="assets/images/resource/image-2.jpg" alt=""></div>
-                    <div class="content">
-                        <h4>Feeding</h4>
-                        <div class="text">Lexcept to obtain some advantage from <br> it? But who has any right to find fault <br> with a man chooses to enjoy.</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 welcome-block-one">
-                <div class="inner-box">
-                    <div class="image"><img src="assets/images/resource/image-3.jpg" alt=""></div>
-                    <div class="content">
-                        <h4>Our Products</h4>
-                        <div class="text">Lexcept to obtain some advantage from <br> it? But who has any right to find fault <br> with a man chooses to enjoy.</div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
+           
         </div>
     </div>
-</section> --}}
+</section>
 
 
 <!-- About Section -->
@@ -165,7 +154,7 @@
         </div>
     </div>
 </section>
-
+<h1>{{$showPopUp}}</h1>
 <!-- CTA Section -->
 {{-- <section class="cta-section" style="background-image: url(images/background/bg-2.jpg);">
     <div class="auto-container">
@@ -426,6 +415,7 @@
     </div>
 </section>
 
+
 <!-- Blog Section -->
 {{-- <section class="blog-section">
     <div class="image-one"><img src= "{{asset('images/resource/sketch-3.jpg')}}" alt=""></div>
@@ -472,4 +462,25 @@
  --}}
 
 
+
+
+
+
+
+      
 @endsection
+
+@if ($appearance->adevertise_image and $showPopUp)
+@section('custom_footer')
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" >
+      <div class="modal-content">
+        
+        <div class="modal-body">
+          <img  src="{{asset('images/popup').'/'.$appearance->adevertise_image}}">
+        </div>        
+      </div>
+    </div>
+  </div>
+@endsection
+@endif

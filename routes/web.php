@@ -21,12 +21,15 @@ Auth::routes();
 Route::get('cattles', 'PageController@cattles')->name('allcattles');
 Route::get('services', 'PageController@services')->name('allservices');
 Route::get('showcattle/{slug}', 'PageController@show')->name('cattle-detail');
+Route::get('showservice/{slug}', 'PageController@showService')->name('service-detail');
+Route::post('search', 'PageController@search')->name('search');
 
 // Route::get('cattles/create', 'ProductController@create')->name('create');
 // Route::post('cattle', 'ProductController@store');
 Route::group(['middleware' => ['auth']], function () {
     Route::resource('cattle', 'ProductController');
     Route::get('dashboard', 'HomeController@index')->name('home');
+    Route::resource('service', 'ServiceController');
 
     Route::get('cms/appearance', 'CmsController@appearance')->name('appearance');
     Route::resource('cms/banner', 'BannerController');

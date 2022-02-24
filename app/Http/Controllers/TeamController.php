@@ -17,7 +17,7 @@ class TeamController extends Controller
     {
         //
         $team_members = Team::all();
-        return view('cms/team', compact('team_members'));
+        return view('admin.cms.team', compact('team_members'));
 
     }
 

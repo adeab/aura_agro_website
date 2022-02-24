@@ -17,7 +17,7 @@ class BannerController extends Controller
     {
         //
         $banners = Banner::all();
-        return view('cms.banner', compact('banners'));
+        return view('admin.cms.banner', compact('banners'));
     }
 
     /**

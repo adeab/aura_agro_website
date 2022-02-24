@@ -174,23 +174,24 @@
         <div class="popup-inner">
             <div class="overlay-layer"></div>
             <div class="search-form">
-                <form method="post" action="index.html">
+                <form method="post" action="{{url('search')}}">
+                    @csrf
                     <div class="form-group">
                         <fieldset>
-                            <input type="search" class="form-control" name="search-input" value="" placeholder="Search Here" required >
+                            <input type="search" class="form-control" name="keyword" value="" placeholder="Search Here" required >
                             <input type="submit" value="Search Now!" class="theme-btn">
                         </fieldset>
                     </div>
                 </form>
                 <br>
-                <h3>Recent Search Keywords</h3>
+                {{-- <h3>Recent Search Keywords</h3>
                 <ul class="recent-searches">
                     <li><a href="#">Finance</a></li>
                     <li><a href="#">Idea</a></li>
                     <li><a href="#">Service</a></li>
                     <li><a href="#">Growth</a></li>
                     <li><a href="#">Plan</a></li>
-                </ul>
+                </ul> --}}
             </div>
             
         </div>
@@ -199,6 +200,7 @@
     
     @yield('content')
     @include('includes.footer')
+
 	
 </div>
 <!--End pagewrapper-->
@@ -207,9 +209,12 @@
 <div class="scroll-to-top scroll-to-target" data-target="html"><span class="flaticon-right-arrow"></span></div>
 @yield('custom_footer')
 {{-- <script src="{{ asset('js/jquery.js')}}"><//script> --}}
-
+    
 <script src="{{ asset('js/popper.min.js')}}"></script>
 <script src="{{ asset('js/bootstrap.min.js')}}"></script>
+{{-- <script>
+      $('#exampleModalCenter').modal('show');
+  </script> --}}
 <script src="{{ asset('js/bootstrap-select.min.js')}}"></script>
 {{-- <script src="{{ asset('js/jquery.fancybox.js')}}"></script> --}}
 <script src="{{ asset('js/isotope.js')}}"></script>
@@ -221,10 +226,10 @@
 <script src="{{ asset('js/TweenMax.min.js')}}"></script>
 <script src="{{ asset('js/swiper.min.js')}}"></script>
 <script src="{{ asset('js/jquery-ui.js')}}"></script>
-
 <script src="{{ asset('js/script.js')}}"></script>
-
-
+<script>
+ $('#exampleModalCenter').modal('show');
+</script>
 </body>
 </html>
 

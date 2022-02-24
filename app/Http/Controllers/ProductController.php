@@ -38,7 +38,7 @@ class ProductController extends Controller
     public function create()
     {
         //
-        return view('cattles.create');
+        return view('admin.cattles.create');
     }
 
     /**
@@ -82,7 +82,7 @@ class ProductController extends Controller
                 $imagemodel->save();
             }
     }
-        return Redirect::route('cattle.show', $cattle->id);
+        return Redirect::route('cattle-detail', $cattle->slug);
         
     }
 
@@ -94,8 +94,8 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        $cattle= Product::with('photos')->find($id);
-        dd($cattle);
+        // $cattle= Product::with('photos')->find($id);
+        // dd($cattle);
         // dd($product);
         //
         // dd($product);
@@ -135,14 +135,12 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
         dd($id);
 
     }
     public function toggleStatus($id){
         $cattle= Product::find($id);
         $cattle->bookingStatus = !$cattle->bookingStatus;
-        // dd($cattle->bookingStatus);
         $cattle->save();
     }
 }

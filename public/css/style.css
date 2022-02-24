@@ -4045,7 +4045,8 @@ img {
 }
 
 .recipe-details .print-page a {
-    font-size: 22px;
+    padding-top: 3rem;
+    font-size: medium;
     font-weight: 700;
     font-family: 'Playfair Display', serif;
     line-height: 50px;
@@ -6461,3 +6462,9 @@ img {
 
 
 
+button.theme-btn.search-toggler {
+    padding-right: 4rem;
+}
+.main-menu .auto-container {
+    max-width: fit-content;
+}

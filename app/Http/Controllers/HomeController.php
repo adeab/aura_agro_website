@@ -21,6 +21,6 @@ class HomeController extends Controller
     public function index()
     {
         $cattles = Product::all();
-        return view('home', compact('cattles'));
+        return view('admin.home', compact('cattles'));
     }
 }

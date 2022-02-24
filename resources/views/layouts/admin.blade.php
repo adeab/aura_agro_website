@@ -120,7 +120,7 @@
             
           </li>
           <li class="nav-item">
-            <a href="{{ url('/dashboard') }}" class="{{ (request()->is('services*')) ? 'nav-link active' : 'nav-link' }}">
+            <a href="{{ url('/service') }}" class="{{ (request()->is('services*')) ? 'nav-link active' : 'nav-link' }}">
               <i class="nav-icon fas fa-handshake"></i>
               <p>
                 Services

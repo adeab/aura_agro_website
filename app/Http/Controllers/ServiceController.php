@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Service;
 use Illuminate\Http\Request;
+use Redirect;
 
 class ServiceController extends Controller
 {
@@ -15,6 +16,8 @@ class ServiceController extends Controller
     public function index()
     {
         //
+        $services = Service::all();
+        return view('admin.service.index', compact('services'));
     }
 
     /**
@@ -25,6 +28,7 @@ class ServiceController extends Controller
     public function create()
     {
         //
+        return view('admin.service.create');
     }
 
     /**
@@ -36,6 +40,18 @@ class ServiceController extends Controller
     public function store(Request $request)
     {
         //
+        // dd($request);
+        $service= new Service();
+        $service->title=$request->title;
+        $service->slug= strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $request->title), '-'));
+        $service->detail= $request->detail;
+        $folderPath = public_path('upload/');
+        $img = $request->file('image');
+        $serviceImage =$img->getClientOriginalName();
+        $img->move($folderPath, $serviceImage);
+        $service->image="$serviceImage";
+        $service->save();
+        return Redirect::route('service-detail', $service->slug);
     }
 
     /**

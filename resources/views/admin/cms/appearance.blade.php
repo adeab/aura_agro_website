@@ -61,7 +61,7 @@
             <label for="address">Write Address:</label>
             <textarea rows="6" placeholder="Address" name="address" id="address">{{$appearance?$appearance->address:''}}</textarea>
         </div>
-        {{-- <hr>
+        <hr>
         <div class="form-group">
             
                     <label for="welcome_title">Enter Welcome Section Title</label>
@@ -75,7 +75,7 @@
             <label for="welcome">Welcome Message:</label>
             <textarea rows="3" placeholder="Welcome Message" name="welcome" id="welcome">{{$appearance?$appearance->welcome_message:''}}</textarea>
         </div>
-        <hr> --}}
+        <hr>
         <div class="form-group">
             
                     <label for="team_title">Enter Team Section Title</label>
@@ -88,18 +88,7 @@
         <div class="form-group">
             <label for="team">Team Message:</label>
             <textarea rows="3" placeholder="Team Message" name="team" id="team">{{$appearance?$appearance->team_message:''}}</textarea>
-        </div>
-
-
-
-
-
-
-        
-
-
-
-        
+        </div>        
         <div class="form-group" style="margin-bottom: 1rem;">
             @if($appearance)
             <small>Current Logo: </small>
@@ -108,10 +97,22 @@
             @endif
             @include('includes.cropprev', ['label'=>'Change current logo', 'ratio'=>1, 'prev_height'=>300, 'prev_width'=>300])
         </div>
+        <hr>
+        <div class="form-group">
+            @if($appearance->adevertise_image)
+            <small>Current Advertise Image: </small>
+            <img class="img-fluid" src="{{asset('images/popup').'/'.$appearance->adevertise_image}}"
+                                        alt="">
+            <br>
+            @endif
+            <label for="adv_image">Upload Popup Advertise Image</label>
+            <input type="file" id="adv_image" name="adv_image" class="form-control-file">
+            
+        </div>
         
         
         <div class="form-group">
-            <input type="submit" class="form-control">
+            <input type="submit" class="form-control btn btn-primary" style="width: 100%">
         </div>
     </form>
 

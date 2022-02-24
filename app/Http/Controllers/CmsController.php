@@ -13,11 +13,11 @@ class CmsController extends Controller
     public function appearance(){
         $appearance = Appearance::take(1)->first();
         // dd($appearance);
-        return view('cms.appearance', compact('appearance'));
+        return view('admin.cms.appearance', compact('appearance'));
     }
     public function banner(){
         $banners = Banner::all();
-        return view('cms.banner', compact('banners'));
+        return view('admin.cms.banner', compact('banners'));
     }
     public function updateAppearance(Request $request){
         
@@ -25,6 +25,12 @@ class CmsController extends Controller
         $appearance = Appearance::take(1)->first();
         if(!$appearance){
             $appearance = new Appearance();
+        }
+
+        if($request->service){
+            $appearance->service_text = $request->service; 
+            $appearance->save();
+            return Redirect::route('service.index');
         }
 
         $appearance->facebook = $request->facebook;
@@ -35,7 +41,8 @@ class CmsController extends Controller
         $appearance->welcome_header = $request->welcome_title;
         $appearance->welcome_message = $request->welcome;
         $appearance->team_message= $request->team;
-        $appearance->team_header = $request->team_title;
+        $appearance->team_header = $request->team_title; 
+          
 
         if($request->file('image')){
             $folderPath = public_path('images/');
@@ -47,7 +54,15 @@ class CmsController extends Controller
             $imageFullPath = $folderPath.$imageName;
             file_put_contents($imageFullPath, $image_base64);
         }
+        if($request->file('adv_image')){
+            $folderPath = public_path('images/popup/');
+            $img = $request->file('adv_image');
+            $advertiseImage =$img->getClientOriginalName();
+            $img->move($folderPath, $advertiseImage);
+            $appearance->adevertise_image="$advertiseImage";
+        }
         $appearance->save();
+       
         return Redirect::route('appearance');
         
     }

@@ -17,7 +17,7 @@ class TestimonialController extends Controller
     {
         //
         $testimonials = Testimonial::all();
-        return view('cms/testimonial', compact('testimonials'));
+        return view('admin.cms.testimonial', compact('testimonials'));
     }
 
     /**

@@ -33,7 +33,7 @@
             </select>
         </div> --}}
         <div class="form-group">
-            <label for="cattle_detail">Write Desccription:</label>
+            <label for="cattle_detail">Write Description:</label>
             <textarea rows="6" placeholder="Enter Cattle Detail" name="cattle_detail" id="cattle_detail"></textarea>
         </div>
         <div class="form-group">
@@ -59,7 +59,7 @@
         <br>
         @include('includes.multipleprev')
         <div class="form-group">
-            <input type="submit" class="form-control">
+            <input type="submit" class="form-control btn btn-primary" style="width: 100%">
         </div>
     </form>
 

@@ -5,10 +5,10 @@
     </div>
 
     <div class="auto-container">
-        <h2 style="color: #233E8B">Qurbani Cattles</h2>
+        <h2 style="color: #233E8B">{{$title}}</h2>
         <ul class="page-breadcrumb">
-            <li><a href="{{ url('/') }}" style="color: black">home</a></li>
-            <li style="color: #233E8B">Qurbani Cattles</li>
+            <li><a href="{{ url('/') }}" style="color: black">Home</a></li>
+            <li style="color: #233E8B">{{$title}}</li>
         </ul>
     </div>
 </section>

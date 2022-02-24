@@ -3,7 +3,7 @@
 
 
 @section('content')
-@include('includes.title')
+@include('includes.title', ['title'=>'Cattles'])
 <!-- Our Products -->
 <section class="products-section">
     <div class="auto-container">
@@ -78,7 +78,7 @@
                         <div class="inner-box">
                             <div class="image">
                                 <a href="{{ route('cattle-detail', $cattle->slug) }}"><img src="{{asset('upload').'/'.$cattle->coverPhoto}}"
-                                        alt="aura-agro-logo"></a>
+                                        alt="cattle-image"></a>
                             </div>
                             <div class="lower-content">
                                 <h4><a href="{{ route('cattle-detail', $cattle->slug) }}">{{ $cattle->name }}</a></h4>

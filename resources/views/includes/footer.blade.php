@@ -1,6 +1,6 @@
 
     <!-- Main Footer -->
-    <footer class="main-footer">
+    <footer class="main-footer" id="footer">
         <div class="auto-container">
             <!--Widgets Section-->
             <div class="widgets-section">

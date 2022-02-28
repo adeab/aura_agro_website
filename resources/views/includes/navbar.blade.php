@@ -12,21 +12,11 @@
                         <nav class="main-menu navbar-expand-md navbar-light">
                             <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
                                 <ul class="navigation">
-                                    <li><a href="{{ url('/') }}">Home </a></li>
-                                    <li class="dropdown"><a href="#">About Us</a>
-                                        <ul>
-                                            <li><a href="about.html">Our Introduction</a></li>
-                                            <li><a href="farmers.html">Our Farmers</a></li>
-                                            <li><a href="testimonials.html">Testimonials</a></li>
-                                            <li><a href="gallery.html">Our Gallery</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="{{ route('allcattles') }}">Qurbani Cattle</a></li>
-                                    {{-- <a href="{{ url('/home') }}">Home</a>
-                                    @else
-                                    <a href="{{ route('login') }}">Login</a> --}}
-                                    <li><a href="{{ route('allservices') }}">Qurbani Services</a></li>
-                                    <li><a href="#">Contact Us</a></li>
+                                    <li class="{{ (request()->is('/')) ? 'current' : '' }}"><a href="{{ url('/') }}">Home</a></li>
+                                    <li><a href="{{ url('/') }}#about-section">About Us</a></li>
+                                    <li class="{{ (request()->is('cattles')) ? 'current' : '' }}"><a href="{{ route('allcattles') }}">Qurbani Cattle</a></li>
+                                    <li class="{{ (request()->is('services')) ? 'current' : '' }}"><a href="{{ route('allservices') }}">Qurbani Services</a></li>
+                                    <li><a href="#footer">Contact Us</a></li>
                                 </ul>
                             </div>
                         </nav>

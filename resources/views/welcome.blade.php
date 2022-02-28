@@ -132,7 +132,7 @@
 
 
 <!-- About Section -->
-<section class="about-section" style="background-image: url(images/background/bg-1.jpg);">
+<section id="about-section" class="about-section" style="background-image: url(images/background/bg-1.jpg);">
     <div class="auto-container">
         <div class="row">
             <div class="col-lg-7">

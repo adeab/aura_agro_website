@@ -15,18 +15,26 @@
                         <div class="image-column col-lg-6 col-md-12 col-sm-12">
                             <figure class="image-box"><a href={{ asset('upload').'/'.$cattle->coverPhoto }}
                                     title="{{ $cattle->name }}"><img src="{{asset('upload').'/'.$cattle->coverPhoto}}"
-                                        alt=""></a></figure>
+                                        alt=""></a>
+                                        
+                                    </figure>
+                                   
                         </div>
                         <div class="info-column col-lg-6 col-md-12 col-sm-12">
                             <div class="inner-column">
                                 <h4>{{ $cattle->name }}</h4>
 
                                 <div class="price">Price : <span>BDT {{ $cattle->price }}</span></div>
-
                                 <div class="other-options clearfix">
                                     {{-- <div class="item-quantity"><label class="field-label">Quantity :</label><input class="quantity-spinner" type="text" value="2" name="quantity"></div> --}}
-                                    <button type="button" class="theme-btn cart-btn" style="color: white">Call To Make
-                                        Booking</button>
+                                    @if ($cattle->bookingStatus)
+                                    <div class="alert alert-danger" role="alert">
+                                        <strong>Sorry! This one is booked!</strong>
+                                    </div>   
+                                   @else
+                                   <a href="tel:{{ $appearance->phone_number }}" class="theme-btn cart-btn">Call To Make Booking</a>
+                                   @endif
+                                   
                                 </div>
                             </div>
                         </div>

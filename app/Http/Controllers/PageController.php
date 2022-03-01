@@ -35,9 +35,9 @@ class PageController extends Controller
         }
     }
     public function cattles(){
-        $total=Product::count();
         $allcattles= Product::orderBy('id','desc')->paginate(12);
-        return view('cattles', compact('allcattles', 'total'));
+        // dd($allcattles);
+        return view('cattles', compact('allcattles'));
     }
 
     public function show($slug){
@@ -57,7 +57,8 @@ class PageController extends Controller
     public function search(Request $request){
         $allcattles= Product::where('name', 'LIKE', "%{$request->keyword}%")->paginate(12);
         // dd($allcattles);
-        $total = count( $allcattles->toArray());
-        return view('cattles', compact('allcattles', 'total'));
+        // // dd($allcattles);
+        // $total = count( $allcattles->toArray());
+        return view('cattles', compact('allcattles'));
     }
 }

@@ -52,7 +52,7 @@
                             <h1>Demo Title</h1>
                             <div class="text">Enter sliders from admin dashboard</div>
                             <div class="link-box">
-                                <a href="{{ url('/cattles') }}" class="theme-btn btn-style-one"><span>View all products</span></a>
+                                <a href="{{ url('/cattles') }}" class="theme-btn btn-style-one"><span>View all cattles</span></a>
                             </div>
                         </div>
                     </div>

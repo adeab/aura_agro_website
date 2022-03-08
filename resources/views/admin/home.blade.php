@@ -41,13 +41,13 @@
               <ol class="breadcrumb float-sm-right">
                   <li class="breadcrumb-item"><a href="#">Home</a></li>
                   <li class="breadcrumb-item active">DataTables</li>
-                  
-                  
+
+
               </ol>
-                  
-              
+
+
           </div> --}}
-          
+
       </div>
   </div><!-- /.container-fluid -->
 </section>
@@ -56,7 +56,7 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-12">
-          
+
           <!-- /.card -->
 
           <div class="card">
@@ -64,7 +64,7 @@
               <a class="btn btn-primary float-right" href="{{ route('cattle.create') }}"><i class="fas fa-plus" style="margin-right: .5rem;"></i>Add New Cattle</a>
             </div>
             <!-- /.card-header -->
-            <div class="card-body table-container"> 
+            <div class="card-body table-container">
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
@@ -91,20 +91,20 @@
                       <button type="button" class="btn btn-link" data-toggle="tooltip" data-placement="bottom" title="Edit Detail"><i class="fas fa-edit"></i></button>
                       <a href="{{ route('cattle-detail', $cattle->slug) }}" target="_blank" type="button" class="btn btn-link" data-toggle="tooltip" data-placement="bottom" title="View As Guest"><i class="far fa-eye"></i></a>
                       <meta name="csrf-token" content="{{ csrf_token() }}">
-                      <button type="button" class="btn btn-link" style="color: red" data-toggle="tooltip" data-placement="bottom" title="Delete" onclick="deleteCattle({{$cattle->id}}, this)"><i class="fas fa-trash-alt"></i></button>
-                     
+                      <button type="button" class="btn btn-link" style="color: red" data-toggle="tooltip" data-placement="bottom" title="Delete" onclick="deleteRecord({{$cattle->id}}, this)"><i class="fas fa-trash-alt"></i></button>
+
 
                     </td>
-                  </tr>    
+                  </tr>
                 @endforeach
-               
-              
-                
-               
-             
-            
-               
-               
+
+
+
+
+
+
+
+
                 </tbody>
                 <tfoot>
                   <tr>
@@ -128,12 +128,13 @@
     <!-- /.container-fluid -->
   </section>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
   <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script>
-          function changeBookingStatus(cattleid, thisBtn) {              
+          function changeBookingStatus(cattleid, thisBtn) {
              $.ajax({
                 type:'get',
-                url:'/toggleStatus/'+cattleid,             
+                url:'/toggleStatus/'+cattleid,
                 success:function() {
                   $(thisBtn).text(function(i, text){
                       return text === "Booked" ? "Available" : "Booked";
@@ -144,26 +145,42 @@
              });
           }
 
-          function deleteCattle(cattleid, thisBtn){
-            var token = $("meta[name='csrf-token']").attr("content");
-            let url = "{{ route('cattle.destroy', ['id' => ":cattleid"]) }}";
-            url = url.replace(":cattleid", cattleid);
-            // var cattle_id = cattleid;
-            // console.log(cattle_id);
-            
-            $.ajax({
-                type: 'POST',
-                dataType: 'json',
-                data: {
-                  // id: cattleid,
-                  _token: token,
-                  _method: 'DELETE'
-                },
-                url: url,
-                success: function (data) {
-                    //
-                } 
-            });
+          function deleteRecord(deleteid, thisBtn){
+            swal({
+              title: `Are you sure you want to delete this record?`,
+              text: "If you delete this, it will be gone forever.",
+              icon: "warning",
+              buttons: true,
+              dangerMode: true,
+          })
+          .then((willDelete) => {
+            if (willDelete) {
+
+                var token = $("meta[name='csrf-token']").attr("content");
+                let url = "{{ route('cattle.destroy', ['id' => ":deleteid"]) }}";
+                url = url.replace(":deleteid", deleteid);
+
+                $.ajax({
+                    type: 'POST',
+                    dataType: 'json',
+                    data: {
+                    // id: deleteid,
+                    _token: token,
+                    _method: 'DELETE'
+                    },
+                    url: url,
+                    success:
+                        //
+                        $(thisBtn).parents('tr').remove()
+
+                });
+            }
+
+          });
+
+            // $(thisBtn).parents('tr').remove();
+
+
           }
        </script>
 @endsection

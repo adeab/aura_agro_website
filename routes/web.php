@@ -27,6 +27,7 @@ Route::post('search', 'PageController@search')->name('search');
 // Route::get('cattles/create', 'ProductController@create')->name('create');
 // Route::post('cattle', 'ProductController@store');
 Route::group(['middleware' => ['auth']], function () {
+    Route::get('toggleStatus', 'ProductController@toggleStatus');
     Route::resource('cattle', 'ProductController');
     Route::get('dashboard', 'HomeController@index')->name('home');
     Route::resource('service', 'ServiceController');

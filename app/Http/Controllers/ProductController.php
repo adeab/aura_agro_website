@@ -21,13 +21,13 @@ class ProductController extends Controller
 
     // public function showCattles()
     // {
-        
+
     // }
 
      public function index()
     {
         //
-        
+
     }
 
     /**
@@ -50,7 +50,7 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         // dd($request);
-        
+
         $cattle= new Product();
         $cattle->name=$request->cattle_title;
         $cattle->slug= strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $request->cattle_title), '-'));
@@ -69,10 +69,10 @@ class ProductController extends Controller
         $cattle->coverPhoto = $imageName;
         $cattle->save();
 
-        if ($files = $request->file('gallery_image')) 
+        if ($files = $request->file('gallery_image'))
         {
             foreach($files as $img) {
-                // Upload Orginal Image           
+                // Upload Orginal Image
             $galleryImage =$img->getClientOriginalName();
             $img->move($folderPath, $galleryImage);
                 // Save In Database
@@ -83,7 +83,7 @@ class ProductController extends Controller
             }
     }
         return Redirect::route('cattle-detail', $cattle->slug);
-        
+
     }
 
     /**
@@ -135,11 +135,16 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        dd($id);
+        // dd($id);
+        $cattle= Product::find($id);
+        $cattle->delete();
+
 
     }
     public function toggleStatus($id){
+        dd($id);
         $cattle= Product::find($id);
+
         $cattle->bookingStatus = !$cattle->bookingStatus;
         $cattle->save();
     }

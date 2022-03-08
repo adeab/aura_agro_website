@@ -28,8 +28,8 @@
     <div class="swiper-container banner-slider">
         <div class="swiper-wrapper">
             <!-- Slide Item -->
-            @if ($banners==null )
-            @foreach ($banners as $banner)
+
+            @forelse ($banners as $banner)
             <div class="swiper-slide" style="background-image: url(upload/{{ $banner->image }});">
                 <div class="content-outer">
                     <div class="content-box">
@@ -42,9 +42,8 @@
                         </div>
                     </div>
                 </div>
-            </div>    
-            @endforeach   
-            @else
+            </div>
+            @empty
             <div class="swiper-slide" style="background-image: url(images/main-slider/image-2.jpg);">
                 <div class="content-outer">
                     <div class="content-box">
@@ -57,40 +56,11 @@
                         </div>
                     </div>
                 </div>
-            </div>   
-            @endif
-           
-            
+            </div>
+            @endforelse
 
-            <!-- Slide Item -->
-            {{-- <div class="swiper-slide" style="background-image: url(images/main-slider/image-2.jpg);">
-                <div class="content-outer">
-                    <div class="content-box">
-                        <div class="inner">
-                            <h1>Healthy Natural Products</h1>
-                            <div class="text">Dairy producers worldwide face similar challenges around animal welfare, <br>farm profitability, food safety and work efficiency. </div>
-                            <div class="link-box">
-                                <a href="#" class="theme-btn btn-style-one"><span>View all products</span></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> --}}
 
-            <!-- Slide Item -->
-            {{-- <div class="swiper-slide" style="background-image: url(images/main-slider/image-3.jpg);">
-                <div class="content-outer">
-                    <div class="content-box">
-                        <div class="inner">
-                            <h1>100% Natural & Healthy Milk</h1>
-                            <div class="text">Dairy producers worldwide face similar challenges around animal welfare, <br>farm profitability, food safety and work efficiency. </div>
-                            <div class="link-box">
-                                <a href="#" class="theme-btn btn-style-one"><span>View all products</span></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> --}}
+
         </div>
     </div>
     <div class="banner-slider-nav">
@@ -112,7 +82,7 @@
         <div class="row">
             @foreach ($services as $service)
             <div class="col-lg-4 welcome-block-one">
-               
+
                 <a href="{{ route('service-detail', $service->slug) }}">
                 <div class="inner-box">
                     <div class="image"><img style="height: 15rem;" src="{{asset('upload').'/'.$service->image}}" alt=""></div>
@@ -122,10 +92,10 @@
                     </div>
                 </div>
                 </a>
-               
+
             </div>
             @endforeach
-           
+
         </div>
     </div>
 </section>
@@ -143,7 +113,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    
+
                 </div>
             </div>
             <div class="col-lg-5">
@@ -154,7 +124,7 @@
         </div>
     </div>
 </section>
-<h1>{{$showPopUp}}</h1>
+
 <!-- CTA Section -->
 {{-- <section class="cta-section" style="background-image: url(images/background/bg-2.jpg);">
     <div class="auto-container">
@@ -236,7 +206,7 @@
                         <div class="content pr-lg-80 pt-lg-5">
                             <h3>Featured Recipe</h3>
                             <div class="text">Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing.</div>
-                        </div>                                
+                        </div>
                     </div>
                 </div>
             </div>
@@ -366,7 +336,7 @@
             <div class="col-lg-3 col-md-6 team-block-one">
                 <div class="inner-box wow fadeInUp" data-wow-duration="1500ms">
                     <div class="image">
-                        <img src="{{asset('images/team').'/'.$member->image}}" alt=""> 
+                        <img src="{{asset('images/team').'/'.$member->image}}" alt="">
                         {{-- <div class="overlay-box">
                             <ul class="social-links">
                                 <li><a href="#"><span class="fab fa-facebook-f"></span></a></li>
@@ -380,12 +350,12 @@
                         <div class="designation">{{ $member->designation }}</div>
                     </div>
                 </div>
-            </div>    
+            </div>
             @endforeach
-            
-            
-           
-            
+
+
+
+
         </div>
     </div>
 </section>
@@ -404,13 +374,13 @@
                         <div class="author-info">
                             <h4>{{ $testimonial->name }}</h4>
                             <div class="designation">{{ $testimonial->designation }}</div>
-                        </div>                                
-                    </div>                            
+                        </div>
+                    </div>
                 </div>
             </div>
             @endforeach
-            
-            
+
+
         </div>
     </div>
 </section>
@@ -467,7 +437,7 @@
 
 
 
-      
+
 @endsection
 
 @if ($appearance->adevertise_image and $showPopUp)
@@ -475,10 +445,10 @@
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg" >
       <div class="modal-content">
-        
+
         <div class="modal-body">
           <img  src="{{asset('images/popup').'/'.$appearance->adevertise_image}}">
-        </div>        
+        </div>
       </div>
     </div>
   </div>

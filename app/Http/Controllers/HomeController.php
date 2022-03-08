@@ -20,7 +20,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $cattles = Product::all();
+        $cattles = Product::orderBy('id','desc')->get();
         return view('admin.home', compact('cattles'));
     }
 }

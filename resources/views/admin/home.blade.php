@@ -88,7 +88,7 @@
                       <button type="button" class="btn {{$cattle->bookingStatus?'btn-danger':'btn-primary'}} btn-sm" onclick="changeBookingStatus({{$cattle->id}}, this)" data-toggle="tooltip" data-placement="bottom" title="Click to change status"> {{$cattle->bookingStatus?'Booked':'Available'}}</button>
                     </td>
                     <td>
-                      <button type="button" class="btn btn-link" data-toggle="tooltip" data-placement="bottom" title="Edit Detail"><i class="fas fa-edit"></i></button>
+                        <a href="{{ route('cattle.edit', $cattle->id) }}" type="button" class="btn btn-link" data-toggle="tooltip" data-placement="bottom" title="Edit Detail"><i class="fas fa-edit"></i></a>
                       <a href="{{ route('cattle-detail', $cattle->slug) }}" target="_blank" type="button" class="btn btn-link" data-toggle="tooltip" data-placement="bottom" title="View As Guest"><i class="far fa-eye"></i></a>
                       <meta name="csrf-token" content="{{ csrf_token() }}">
                       <button type="button" class="btn btn-link" style="color: red" data-toggle="tooltip" data-placement="bottom" title="Delete" onclick="deleteRecord({{$cattle->id}}, this)"><i class="fas fa-trash-alt"></i></button>
@@ -129,10 +129,10 @@
   </section>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
-  <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script>
           function changeBookingStatus(cattleid, thisBtn) {
-             $.ajax({
+              $.ajax({
                 type:'get',
                 url:'/toggleStatus/'+cattleid,
                 success:function() {

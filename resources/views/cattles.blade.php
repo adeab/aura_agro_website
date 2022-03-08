@@ -47,7 +47,7 @@
                                 </div>
                             </div>
                         </div> --}}
-                        
+
                     {{-- </div>
                 </div>
             </div> --}}
@@ -61,15 +61,7 @@
                         <div class="showing-result">Showing 1 - 12 of {{ $allcattles->total() }} results</div>
                     </div>
                     <div class="right-column">
-                        {{-- <form action="#">
-                            <select class="selectpicker">
-                                <option value="1">Short by: Default</option>
-                                <option value="1">Sort by popularity</option>
-                                <option value="1">Sort by average rating</option>
-                                <option value="1">Sort by price: low to high</option>
-                                <option value="1">Sort by price: high to low</option>
-                            </select>
-                        </form> --}}
+                        {{--  --}}
                     </div>
                 </div>
                 <div class="row">
@@ -97,42 +89,27 @@
                     <h3>No Cattle Found!</h3>
                     @if(request()->is('search'))
                     <small>Try changing your search keywords! Or you can <a href="{{url('/cattles')}}">see all</a></small>
-                    
-                    @endif                
-                    </div> 
+
+                    @endif
+                    </div>
                     @endforelse
-                                
-                    
-                   
-                    
-                    
-                    
-                    
-                    
-                    
+
+
+
+
+
+
+
+
+
                 </div>
-                {{-- <button onclick="getMessage()">Test</button>
-                <div id="msg"></div> --}}
-                    
+
                 <div class="shop-pagination">
-                   {{ $allcattles->links() }}  
+                   {{ $allcattles->links() }}
                 </div>
             </div>
         </div>
     </div>
 </section>
-{{-- <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
- <script>
-         function getMessage() {
-             alert("clicked");
-            $.ajax({
-               type:'get',
-               url:'/cattles',
-            //    data:'_token = <?php echo csrf_token() ?>',
-               success:function(data) {
-                  $("#msg").html(data);
-               }
-            });
-         }
-      </script> --}}
+
 @endsection

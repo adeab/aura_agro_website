@@ -110,9 +110,11 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function edit(Product $product)
+    public function edit($id)
     {
         //
+        $cattle= Product::find($id);
+        return view('admin.cattles.edit', compact('cattle'));
     }
 
     /**
@@ -142,7 +144,6 @@ class ProductController extends Controller
 
     }
     public function toggleStatus($id){
-        dd($id);
         $cattle= Product::find($id);
 
         $cattle->bookingStatus = !$cattle->bookingStatus;

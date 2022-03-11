@@ -14,7 +14,7 @@
 
     <h1>Update Cattle</h1>
     <p>Please fill up the form and submit to update the cattle data</p>
-    <form style="padding-top: 2rem; padding-bottom: 2rem;" method="post" action="{{url('cattle.update', $cattle->id)}}" enctype="multipart/form-data">
+    <form style="padding-top: 2rem; padding-bottom: 2rem;" method="post" action="{{url('cattle')}}" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
             <label for="cattle_title">Enter Cattle ID</label>
@@ -43,16 +43,16 @@
             <input class="form-control" type="url" placeholder="Enter YouTube Link" name="cattle_video"
                 id="cattle_video" value="{{$cattle->videoLink}}">
         </div>
-        <div class="form-group">
-            <label>Current Cover Photo (Uploading new will replace this):</label>
+        {{-- <div class="form-group">
+            <label>Current Cover Photo:</label>
             <div class="image">
                <img src="{{asset('upload').'/'.$cattle->coverPhoto}}"
                         alt="cattle-image">
 
             </div>
-        </div>
+        </div> --}}
         <div class="form-group">
-            @include('includes.cropprev', ['label'=>'Upload New Cover Photo', 'ratio'=>4/3, 'prev_height'=>240, 'prev_width'=>320])
+            @include('includes.cropprev', ['label'=>'Please Select Cover Photo', 'ratio'=>4/3, 'prev_height'=>240, 'prev_width'=>320])
         </div>
         <br>
         <div class="form-group">
@@ -60,18 +60,7 @@
             @if($cattle->photos->count())
 
             <label>Current Photo Album (Uploading new will replace these):</label>
-            <div class="row">
-            @foreach($cattle->photos as $photo)
-
-            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-
-                    <img  src="{{asset('upload').'/'.$photo->photo_name}}" class="zoom img-fluid "  alt="">
-
-
-            </div>
-
-            @endforeach
-        </div>
+            @include('includes.media_gallery', ['images' => $cattle->photos])
             @endif
         </div>
         @include('includes.multipleprev')
